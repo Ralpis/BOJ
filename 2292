@@ -1,0 +1,25 @@
+/*BOJ 2292 벌집 */
+
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String arg[]) {
+		Scanner scan= new Scanner(System.in);
+		int n=scan.nextInt();
+		
+		int temp=1;
+		int i=1;
+		
+			while(true) {
+				
+				if(temp>=n) {
+					System.out.println(i);
+					break;
+				}
+				temp+=6*i;
+				i++;
+			}	
+		
+	}
+}
