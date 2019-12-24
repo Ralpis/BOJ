@@ -1,0 +1,22 @@
+/* BOJ 1712번 손익분기점 */
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String arg[]) { 
+		Scanner scan = new Scanner(System.in);
+		
+		long a=scan.nextLong();
+		long b=scan.nextLong();
+		long c=scan.nextLong();
+		
+		if(b<c) {
+			long sum = a/(c-b)+1;
+			System.out.println(sum);
+		}
+		else {
+			System.out.println(-1);
+		}
+	
+	}
+}
