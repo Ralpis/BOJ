@@ -1,0 +1,32 @@
+/*백준 알고리즘 2839번 설탕배달*/
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String arg[]) {
+		Scanner scan=new Scanner(System.in);
+		
+		int N = scan.nextInt();
+		int x=0;
+		
+		if(N%5==0) {
+			System.out.println(N/5);
+		}
+		else {
+			while(true) {
+				if(N%5==0) {
+					System.out.println(N/5 + x);
+					break;
+				}
+				else if(N<=0) {
+					System.out.println(-1);
+					break;
+				}
+				
+				N-=3;
+				x++;
+			}
+		}
+		
+	}
+}
