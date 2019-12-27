@@ -1,0 +1,20 @@
+/* BOJ 2443 별찍기 6 */
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+
+		for(int i=0;i<n;i++) {
+			for(int x=0;x<i;x++) {
+				System.out.print(' ');
+			}
+			for(int y=2*n-1;y>(2*i);y--) {
+				System.out.print('*');
+			}
+			System.out.println("");
+		}
+	}
+}
