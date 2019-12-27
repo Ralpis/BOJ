@@ -1,0 +1,37 @@
+/* BOJ 2445 별찍기 8 */
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan= new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		
+		for(int i=0;i<n;i++) {
+			for(int y=0;y<i+1;y++) {
+				System.out.print('*');
+			}
+			for(int x=2*(n-i-1);x>0;x--) {
+				System.out.print(' ');
+			}
+			for(int y=0;y<i+1;y++) {
+				System.out.print('*');
+			}
+			System.out.println("");
+		}
+		for(int i=0;i<n;i++) {
+			for(int z=n-i-1;z>0;z--) {
+				System.out.print('*');
+			}
+			for(int x=0;x<(2*(i+1));x++) {
+				System.out.print(' ');
+			}
+			for(int z=n-i-1;z>0;z--) {
+				System.out.print('*');
+			}
+
+			System.out.println("");
+		}
+	}
+}
