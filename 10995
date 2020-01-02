@@ -1,0 +1,24 @@
+/* BOJ 10995 별찍기 20*/
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		
+		for(int i = 0;i<n;i++) {
+			if(i%2==0) {
+				for(int x=0;x<n;x++) {
+					System.out.print("* ");
+				}
+			}
+			else {
+				for(int y=0;y<n;y++) {
+					System.out.print(" *");
+				}
+			}
+			System.out.println("");
+		}
+	}
+}
