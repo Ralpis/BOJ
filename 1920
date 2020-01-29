@@ -1,0 +1,34 @@
+/* BOJ 1920 수 찾기 */
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		int a[]=new int[n];
+		
+		
+		for(int i=0;i<n;i++) {
+			a[i]=scan.nextInt();
+		}
+		int m = scan.nextInt();
+		
+		for(int i=0;i<m;i++) {
+			int x=0;
+			int y=scan.nextInt();
+			while(x<n) {
+				if(a[x]==y) {
+					System.out.println(1);
+					break;
+				}
+				x++;
+			}
+			if(x==n) {
+				System.out.println(0);
+			}
+		}
+		
+	}
+}
