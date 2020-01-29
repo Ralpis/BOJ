@@ -1,0 +1,27 @@
+/* BOJ 2750 수 정렬 */
+
+
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan= new Scanner(System.in);
+		int n=scan.nextInt();
+		int a[]=new int[n];
+		int tmp;
+		for(int i=0;i<n;i++) {
+			a[i]=scan.nextInt();
+			for(int x=0;x<i;x++) {
+				if(a[i]<=a[x]) {
+					tmp=a[i];
+					a[i]=a[x];
+					a[x]=tmp;
+				}
+			}
+		}
+		
+		for(int i=0;i<n;i++) {
+			System.out.println(a[i]);
+		}		
+	}
+}
