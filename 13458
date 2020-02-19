@@ -1,0 +1,29 @@
+/* BOJ 13458 시험감독 */
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int[] classRoom = new int[num];
+        long count = 0;
+        for (int i = 0; i < num; i++)
+            classRoom[i] = sc.nextInt();
+        int dir1 = sc.nextInt();
+        int dir2 = sc.nextInt();
+ 
+        for (int i = 0; i < num; i++) {
+            classRoom[i] -= dir1;
+            count++;
+            if(classRoom[i]>0) {
+            	count+=(classRoom[i]/dir2);
+            	if(classRoom[i]%dir2!=0) {
+            		count++;
+            	}
+            }
+        }
+ 
+        System.out.println(count);
+    }
+}
