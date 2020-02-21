@@ -1,0 +1,64 @@
+/* BOJ 14888 연산자 끼워넣기*/
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+	
+	static int n;
+	static int[] num;
+	static int[] opr;
+	static long min = 2000000000;
+	static long max = -2000000000;
+	
+	
+	public static void go(int depth, int sum) {
+		if(depth == n - 1) {
+			if(min>sum) {
+				min=sum;
+			}
+			if(max<sum) {
+				max=sum;
+			}
+			return;
+		}
+		
+		for(int i=0;i<4;i++) {
+			if(opr[i]!=0) {
+				opr[i] -=1;
+				if(i==0) go(depth+1,sum+num[depth+1]);
+				if(i==1) go(depth+1,sum-num[depth+1]);
+				if(i==2) go(depth+1,sum*num[depth+1]);
+				if(i==3) go(depth+1,sum/num[depth+1]);
+				opr[i]++;
+			}
+		}
+		
+		
+	}
+	
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		n = Integer.parseInt(br.readLine());
+		num = new int[n];
+		opr = new int[4];
+		
+		String[] str;
+		str = br.readLine().split(" ");
+		for(int i = 0;i < n;i++) {
+			num[i] = Integer.parseInt(str[i]);
+		}
+		
+		str = br.readLine().split(" ");
+		for(int i = 0;i<4;i++) {
+			opr[i]=Integer.parseInt(str[i]);
+		}
+		
+		go(0,num[0]);
+		System.out.println(max + "\n" +min);
+		
+	
+	}
+}
