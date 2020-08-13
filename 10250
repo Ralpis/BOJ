@@ -15,7 +15,7 @@ public class Main {
 				System.out.println((c%a)*100+(c/a)+1);
 			}
 			else {
-				System.out.println((a*100)+(c/a));
+				System.out.println((a * 100)+(c/a));
 			}
 			
 		}
