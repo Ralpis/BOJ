@@ -1,0 +1,39 @@
+#1012 유기농 배추
+#아나콘다에서는 정상적으로 잘 되지만 사이트에서 런타임에러가 뜬다.
+#확인해보면 많은 처리를 일으켜 런타임에러가 발생하는 것이 아닌가 추측해보고 있다 
+
+# dfs algorithm
+def dfs(x,y):    
+    if x<=-1 or x>=m or y<=-1 or y>=n:
+        return False
+    if maps[y][x] ==1:
+        maps[y][x]=0
+        dfs(x-1,y)
+        dfs(x,y-1)
+        dfs(x+1,y)
+        dfs(x,y+1)
+        return True
+    return False 
+
+# main 
+test_case = int(input())
+answer=[]
+for i in range(test_case):
+    m, n, k = map(int,input().split())    
+    maps = [[0]*m for _ in range(n)]
+
+    for i in range(k):
+        x, y = map(int,input().split())
+        maps[y][x] = 1
+
+    result = 0
+    for i in range(m):
+        for j in range(n):
+            if dfs(i,j)==True:
+                result+=1
+
+    answer.append(result)
+
+# output result 
+for i in range(test_case):
+    print(answer[i])
