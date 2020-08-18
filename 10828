@@ -1,0 +1,35 @@
+
+#10828 아... 복붙 신공하다가 empty하고 size 같게 해서 계속 틀려서 왜 틀리나 몰라 3시간 날렸네
+import sys
+input = sys.stdin.readline
+
+def stack(com):
+    if len(com) == 2:
+        array.append(com[1])
+    elif com[0] == command[1]:
+        if len(array) == 0:
+            print("-1")
+        else:
+            print(array[len(array) - 1])
+            del array[len(array) - 1]
+    elif com[0] == command[2]:
+        print(len(array))
+    elif com[0] == command[3]:
+        if len(array) == 0:
+            print("1")
+        else:
+            print("0")
+    else:
+        if len(array) == 0:
+            print("-1")
+        else:
+            print(array[len(array) - 1])
+
+
+array = list()
+command = ['push', 'pop', 'size', 'empty', 'top']
+
+n = int(input())
+
+for i in range(n):
+    stack(list(input().split()))
