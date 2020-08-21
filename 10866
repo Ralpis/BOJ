@@ -1,0 +1,53 @@
+#10866 덱
+
+import sys
+
+
+command = ['push_front','push_back','pop_front','pop_back','size','empty','front','back']
+
+
+def deck(data):
+    if len(data) == 2:
+        if data[0] == command[0]:
+            array.insert(0, data[1])
+        elif data[0] == command[1]:
+            array.append(data[1])
+    if data[0] == command[2]:
+        if len(array) != 0:
+            print(array[0])
+            del array[0]
+        else:
+            print("-1")
+    elif data[0] == command[3]:
+        if len(array) != 0:
+            print(array[len(array) - 1])
+            del array[len(array) - 1]
+        else:
+            print("-1")
+    elif data[0] == command[4]:
+        print(len(array))
+
+    elif data[0] == command[5]:
+        if len(array) != 0:
+            print("0")
+        else:
+            print("1")
+    elif data[0] == command[6]:
+        if len(array) != 0:
+            print(array[0])
+        else:
+            print("-1")
+    elif data[0] == command[7]:
+        if len(array) != 0:
+            print(array[len(array) - 1])
+        else:
+            print("-1")
+
+
+input = sys.stdin.readline
+
+n = int(input())
+array = []
+for i in range(n):
+    deck(list(input().split()))
+
