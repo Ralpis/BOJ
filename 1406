@@ -1,22 +1,35 @@
 #1406 에디터
+import sys
 
-from sys import stdin
- 
-st = stdin.readline().strip()
+input = sys.stdin.readline
+command = ['L', 'D', 'B', 'P']
+
+
+left_input = list(input().strip())
+right_input = []
+
 n = int(input())
-cursor = len(st)
-for line in stdin:
-    if line[0] == 'L':
-        if not cursor == 0:
-            cursor -= 1
-        else: continue
-    elif line[0] == 'D':
-        if not cursor == len(st):
-            cursor += 1
-        else: continue
-    elif line[0] == 'B':
-        if not cursor == 0:
-            st = st[0:cursor-1] + st[cursor:]
-        else: continue
-    elif line[0] == 'P':
-        st
+
+for i in range(n):
+    cmd = input().split()
+    if cmd[0] == 'L':
+        if not left_input:
+            continue
+        right_input.append(left_input.pop())
+    elif cmd[0] == 'D':
+        if not right_input:
+            continue
+        left_input.append(right_input.pop())
+    elif cmd[0] == 'B':
+        if not left_input:
+            continue
+        left_input.pop()
+    elif cmd[0] == 'P':
+        left_input.append(cmd[1])
+
+while left_input:
+    right_input.append(left_input.pop())
+output = ''
+while right_input:
+    output += right_input.pop()
+print(output)
