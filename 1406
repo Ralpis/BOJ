@@ -2,8 +2,6 @@
 import sys
 
 input = sys.stdin.readline
-command = ['L', 'D', 'B', 'P']
-
 
 left_input = list(input().strip())
 right_input = []
