@@ -1,0 +1,12 @@
+#10867 중복빼고 정렬하기
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+
+tmp = list(set(map(int,input().split())))
+tmp.sort()
+
+for _ in tmp:
+    print(_, end=' ')
