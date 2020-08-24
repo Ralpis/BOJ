@@ -1,0 +1,23 @@
+# 1181 단어정렬
+import sys
+
+input = sys.stdin.readline
+
+n = int(input())
+array = [[] for _ in range(51)]
+
+for i in range(n):
+    tmp = input().strip()
+    array[len(tmp)].append(tmp)
+
+for i in range(51):
+    if array[i]:
+        if len(array[i]) >= 2:
+            x = list(set(array[i]))
+            x.sort()
+            for i in x:
+                print(i)
+        else:
+            print(array[i][0])
+
+ㅍ
