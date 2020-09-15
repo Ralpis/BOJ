@@ -1,0 +1,23 @@
+#10816
+
+import sys
+
+input = sys.stdin.readline
+
+n = int(input())
+a = list(input().split())
+m = int(input())
+b = list(input().split())
+
+count = {i : int(0) for i in b}
+index = 0
+
+
+while index < len(a):
+    if count.get(a[index]) != None:
+        count[a[index]] = count.get(a[index]) + 1
+    index += 1
+st1 = ''
+for i in b:
+    st1 += str(count.get(i)) +' '
+print(st1)
