@@ -1,0 +1,38 @@
+#9012 괄호
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+a = [list(input().rstrip()) for _ in range(n)]
+
+def fil(n, a):
+    index = 0
+    answer = []
+    while index < n:
+        p = True
+        stack = []
+        for i in range(len(a[index])):
+            if a[index][i] == '(':
+                stack.append('(')
+            else:
+                if len(stack) != 0:
+                    if stack.pop() != '(':
+                        answer.append('NO')
+                        p = False
+                        break
+                else:
+                    p = False
+                    break
+
+        if p and len(stack) == 0:
+            answer.append('YES')
+        else:
+            answer.append('NO')
+        index += 1
+    return answer
+
+ans = fil(n, a)
+
+for i in ans:
+    print(i, end='\n')
