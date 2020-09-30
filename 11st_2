@@ -1,0 +1,15 @@
+def solution(S):
+    S_size = len(S)
+    str_size = len(S[0])
+    
+    if S_size > 30000 or str_size > 2000:
+        return []
+    elif S_size*str_size > 30000:
+        return []
+    
+    for i in range(S_size):
+        for j in range(i+1,S_size):
+            for x in range(str_size):
+                if S[i][x] == S[j][x]:
+                    return [i,j,x]
+    return []
