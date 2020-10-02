@@ -1,0 +1,7 @@
+def solution(A):
+  A.sort()
+  cnt = 0
+  for i in range(len(A)):
+    if (i+1) != A[i]:
+      cnt += abs((i+1)-A[i])
+  return cnt
